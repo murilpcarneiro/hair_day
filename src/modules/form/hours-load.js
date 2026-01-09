@@ -26,7 +26,7 @@ export function hoursLoad({ date }) {
   opening.forEach(({ hour, avaible }) => {
     const li = document.createElement('li')
     li.classList.add('hour')
-    li.classList.add(avaible ? 'hour-avaible' : 'hour-unavaible')
+    li.classList.add(avaible ? 'hour-avaible' : 'hour-unavailable')
 
     li.textContent = hour
     if (hour === '9:00') {
