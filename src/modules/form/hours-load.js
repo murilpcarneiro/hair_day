@@ -24,7 +24,20 @@ export function hoursLoad({ date }) {
     li.classList.add(avaible ? 'hour-avaible' : 'hour-unavaible')
 
     li.textContent = hour
-
+    if (hour === '9:00') {
+      hourHeaderAdd('Manhã')
+    } else if (hour === '13:00') {
+      hourHeaderAdd('Tarde')
+    } else if (hour === '18:00') {
+      hourHeaderAdd('Noite')
+    }
     hours.appendChild(li)
   })
+}
+
+function hourHeaderAdd(title) {
+  const header = document.createElement('li')
+  header.classList.add('hour-period')
+  header.textContent = title
+  hours.appendChild(header)
 }
