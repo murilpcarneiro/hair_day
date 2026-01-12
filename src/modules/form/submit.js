@@ -36,7 +36,7 @@ form.onsubmit = async (event) => {
     const when = dayjs(selectedDate.value).add(hour, 'hour')
 
     // Gera um id
-    const id = new Date().getTime()
+    const id = new Date().getTime().toString()
 
     // Envia os dados para o servidor
     await scheduleNew({ id, name, when: when.format() })
